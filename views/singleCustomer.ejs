@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow-x: hidden;
+            background-color: #F9F9F9;
+        }
+        .navbar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6rem;
+            background-color: #f0cde5;
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .Link{
+            font-size: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 15px 50px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #e05eb7;
+            transition: transform 0.15s ease;
+            transition: color 0.15 ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Link:hover{
+            transform: scale(1.2);
+            color: #dd1da0;
+        }
+        .linkDiv{
+            display: inline-block;
+            margin-left: 19rem;
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        h1{
+            margin-left: 14.5rem;
+            font-size: 3rem;
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #e05eb7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .singleCustomer{
+            position: relative;
+            top: 8rem;
+            left: 19rem;
+            border: 2px solid black;
+            width: 50%;
+            padding: 3rem;
+            border-radius: 5px;
+            box-shadow: 1px 1px 8px black;
+            background-color: #CDF0EA;
+        }
+        table{
+            width: 90%;
+            margin-left: 2.4rem;
+        }
+        tr{
+            background-color: #e1f6f2
+        }
+        td{
+            width: 30%;
+            padding-left: 1rem;
+        }
+        .transferButton{
+            border: 1px solid black;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+            width: 3rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #cde5f0;
+            color: black;
+            transition: transform 0.11s ease;
+            font-size: 1.2rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        .transferButton:hover{
+            transform: scale(1.06);
+        }
+        .title{
+            font-family: 'Esteban', serif;
+            color: #5b6a68;
+        }
+        .value{
+            font-family: 'Esteban', serif;
+            color: #53615f;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class = "navbar" >
+        <h1>BANK</h1>
+        <div class = "linkDiv">
+            <a href = "/" class = "Link" >Home</a>
+            <a href = "http://localhost:5000/transactions" class = "Link">Transactions</a>
+            <a href = "http://localhost:5000/customers" class = "Link">View Customers</a>
+        </div>
+    </div>
+
+    <!--details of customer-->
+    <div class = "singleCustomer" >
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <h3 class = "title">Name</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].name%></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class = "title">Email ID</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].email%></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class = "title">Address</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].address%></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class = "title">Contact Number</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].contactNumber%></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class = "title">Account Number</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].accountNumber%></h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class = "title">Balance</h3>
+                    </td>
+                    <td>
+                        <h3 class = "value"><%=details[0].currentBalance%></h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a class = "transferButton" href = "/transfer/<%=details[0].name%>" ><span style = "position: relative; right: 0.5rem;">Transfer</span></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            overflow-x: hidden;
+            background-color: #F9F9F9;
+            margin-bottom: 2rem;
+        }
+        .navbar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6rem;
+            background-color: #f0cde5;
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .Link{
+            font-size: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 15px 50px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #e05eb7;
+            transition: transform 0.15s ease;
+            transition: color 0.15 ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Link:hover{
+            transform: scale(1.2);
+            color: #dd1da0;
+        }
+        .linkDiv{
+            display: inline-block;
+            margin-left: 19rem;
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        h1{
+            margin-left: 14.5rem;
+            font-size: 3rem;
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #e05eb7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        table{
+            position: relative;
+            top: 8rem;
+            width: 100%;
+            display: block;
+            left: 14rem;
+        }
+        th{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-size: 1.5rem;
+            color: #5b6a68;
+            background-color: #5bcebb;
+            font-family: 'Montserrat', sans-serif;
+        }
+        tr{
+            background-color: #CDF0EA;
+            margin: 0px;
+            transition: transform 0.1s ease;
+            transition: box-shadow 0.1s ease;
+        }
+        tr:hover{
+            transform: scaleX(1.003);
+            box-shadow: 1px 1px 5px black;
+        }
+        td{
+            text-align: center;
+            width: 20%;
+            padding: 1rem;
+            border-top: 1px solid black;
+            border-left: 0px;
+            border-right: 0px;
+            color: #53615f;
+            box-sizing: border-box;
+            font-family: 'Esteban', serif;
+        }
+        .viewButton{
+            text-decoration: none; 
+            border: 1px solid black; 
+            padding: 0.2rem 1rem; 
+            font-size: 1.2rem; 
+            border-radius: 3px;
+            color: black;
+            transition: background-color 0.15s ease;
+            transition: color 0.15s ease;
+        }
+        .viewButton:hover{
+            background-color: #45a796;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class = "navbar" >
+        <h1>BANK</h1>
+        <div class = "linkDiv">
+            <a href = "/" class = "Link" >Home</a>
+            <a href = "http://localhost:5000/transactions" class = "Link">Transactions</a>
+            <a href = "http://localhost:5000/customers" class = "Link">View Customers</a>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account Number</th>
+                <th>Account Balance</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < 10; i++){%>
+                <tr>
+                    <td><%= customersArray[i].name %></td>
+                    <td><%= customersArray[i].accountNumber %></td>
+                    <td><%= customersArray[i].currentBalance %></td>
+                    <td>
+                        <a href = "/viewCustomer/<%=customersArray[i].accountNumber%>" class = "viewButton"  >
+                            view
+                        </a>
+                    </td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .navbar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6rem;
+            background-color: #f0cde5;
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .Link{
+            font-size: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 15px 50px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #e05eb7;
+            transition: transform 0.15s ease;
+            transition: color 0.15 ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Link:hover{
+            transform: scale(1.2);
+            color: #dd1da0;
+        }
+        .linkDiv{
+            display: inline-block;
+            margin-left: 19rem;
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        h1{
+            margin-left: 14.5rem;
+            font-size: 3rem;
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #e05eb7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .img1{
+            width: 75%;
+            margin-bottom: 2rem;
+            align-items: center;
+            display: block;
+            margin: 1.8rem auto;
+        }
+        .div1{
+            position: absolute;
+            top: 15rem;
+            left: 8rem;
+            display: inline-block;
+            /* border: 1px solid black; */
+            width: 38%;
+            height: 50%;
+            border-radius: 5px;
+            box-shadow: 1px 1px 6px 3px black;
+        }
+        .Button1{
+            text-decoration: none;
+            position: relative;
+            margin-left: 12.5rem;
+            font-size: 1.2rem;
+            border: 1px solid black;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background-color 0.13s ease;
+            transition: color 0.13s ease;
+        }
+        .Button1:hover{
+            background-color: rgb(50, 50, 173);
+            color: white;
+        }
+        .img2{
+            width: 75%;
+            margin-bottom: 1.9rem;
+            display: block;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .div2{
+            position: absolute;
+            top: 15rem;
+            left: 50rem;
+            display: inline-block;
+            /* border: 1px solid black; */
+            width: 38%;
+            height: 50%;
+            border-radius: 5px;
+            box-shadow: 1px 1px 6px 3px black;
+        }
+        .Button2{
+            text-decoration: none;
+            margin-left: 13rem;
+            font-size: 1.2rem;
+            border: 1px solid black;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background-color 0.13s ease;
+            transition: color 0.13s ease;
+        }
+        .Button2:hover{
+            background-color: rgb(50, 50, 173);
+            color: white;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class = "navbar" >
+        <h1>BANK</h1>
+        <div class = "linkDiv">
+            <a href = "/" class = "Link" >Home</a>
+            <a href = "http://localhost:5000/transactions" class = "Link">Transactions</a>
+            <a href = "http://localhost:5000/customers" class = "Link">View Customers</a>
+        </div>
+    </div>
+
+    <div style = "display: inline-block;">
+        <div class = "div1">
+            <a href="http://localhost:5000/customers"><img class = "img1" src="https://i.imgur.com/iNAeu2O.png" title="source: imgur.com" /></a>
+            <a href = "http://localhost:5000/customers" class = "Button1" >View Customers</a>
+        </div>
+        <div class = "div2">
+            <a href="http://localhost:5000/transactions"><img class = "img2" src="https://i.imgur.com/Y2xc71s.png" title="source: imgur.com" /></a>
+            <a href = "http://localhost:5000/transactions" class = "Button2" >Transactions</a>
+        </div>
+    </div>
+</body>
+</html>

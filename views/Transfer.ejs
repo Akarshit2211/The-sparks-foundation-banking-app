@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow-x: hidden;
+            background-color: #F9F9F9;
+        }
+        .navbar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6rem;
+            background-color: #f0cde5;
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .Link{
+            font-size: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 15px 50px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #e05eb7;
+            transition: transform 0.15s ease;
+            transition: color 0.15 ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Link:hover{
+            transform: scale(1.2);
+            color: #dd1da0;
+        }
+        .linkDiv{
+            display: inline-block;
+            margin-left: 19rem;
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        h1{
+            margin-left: 14.5rem;
+            font-size: 3rem;
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #e05eb7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .formDiv{
+            position: absolute;
+            top: 10rem;
+            width: 80%;
+        }
+        form{
+            width: 35%;
+            margin-left: 22rem;
+            margin-top: 4rem;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0.5px 0.5px 5px black;
+            background-color: #CDF0EA;
+        }
+        input{
+            display: block;
+            padding: 0.5rem 2rem;
+            width: 50%;
+            font-family: 'Esteban', serif;
+        }
+        select{
+            display: block;
+            padding: 0.5rem 2rem;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            width: 69%;
+            font-family: 'Esteban', serif;
+        }
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-apprearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        label{
+            display: block;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .submitButton{
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            background-color: #cde5f0;
+            transition: transform 0.11s ease;
+        }
+        .submitButton:hover{
+            transform: scale(1.06);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class = "navbar" >
+    <h1>BANK</h1>
+    <div class = "linkDiv">
+        <a href = "/" class = "Link" >Home</a>
+        <a href = "http://localhost:5000/transactions" class = "Link">Transactions</a>
+        <a href = "http://localhost:5000/customers" class = "Link">View Customers</a>
+    </div>
+</div>
+
+    <div class = "formDiv">
+        <form action = "/addTransaction/<%=from%>" method = "POST">
+            <label>SELECT RECEIVER</label>
+            <select name = "receiver" id = "to">
+                <% for(let i = 0; i < 10; i++){ %>
+                    <% if(customers[i].name === from){%>
+                    <% continue; %>
+                    <% } %>
+                    <option value = "<%=customers[i].name%>" ><%=customers[i].name%></option>
+                <%}%>
+            </select>
+            <label>AMOUNT</label>
+            <input type = "number" name = "amount" placeholder = "Enter Amount" min = 1>
+            <button class = "submitButton" type = "submit" >Transfer</button>
+        </form>
+    </div>
+</body>
+</html>

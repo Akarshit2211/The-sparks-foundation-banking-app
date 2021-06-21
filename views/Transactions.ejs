@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow-x: hidden;
+            background-color: #F9F9F9;
+        }
+        .navbar{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 6rem;
+            background-color: #f0cde5;
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .Link{
+            font-size: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 15px 50px;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #e05eb7;
+            transition: transform 0.15s ease;
+            transition: color 0.15 ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .Link:hover{
+            transform: scale(1.2);
+            color: #dd1da0;
+        }
+        .linkDiv{
+            display: inline-block;
+            margin-left: 19rem;
+            margin-top: auto;
+            margin-bottom: auto;
+        } 
+        h1{
+            margin-left: 14.5rem;
+            font-size: 3rem;
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #e05eb7;
+            font-family: 'Montserrat', sans-serif;
+        }
+        table{
+            margin-top: 12rem;
+            margin-left: 14.5rem;
+            width: 70%;
+        }
+        .headRow{
+            background-color: #5bcebb;
+        }
+        th{
+            padding: 1.05rem;
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #5b6a68;
+        }
+        tr{
+            transition: transform 0.1s ease;
+            transition: box-shadow 0.1s ease;
+        }
+        tr:hover{
+            transform: scaleX(1.003);
+            box-shadow: 1px 1px 5px black;
+        }
+        td{
+            color: #53615f;
+            text-align: center;
+            width: 30%;
+            background-color: rgb(205, 240, 234, 0.8);
+            padding: 1rem;
+            border-bottom: 1px solid black;
+            font-weight: 550;
+            font-family: 'Esteban', serif;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class = "navbar" >
+        <h1>BANK</h1>
+        <div class = "linkDiv">
+            <a href = "/" class = "Link" >Home</a>
+            <a href = "http://localhost:5000/transactions" class = "Link">Transactions</a>
+            <a href = "http://localhost:5000/customers" class = "Link">View Customers</a>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr class = "headRow">
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < transactions.length; i++){ %>
+                <tr style = "border-bottom: 1px solid black;">
+                    <td><%=transactions[i].sender%></td>
+                    <td><%=transactions[i].receiver%></td>
+                    <td><%=transactions[i].amount%></td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+</body>
+</html>
